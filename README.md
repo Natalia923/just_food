@@ -63,6 +63,9 @@
 ### Jenkins, screenshots
 ![image](https://github.com/977605/just_food/blob/main/src/test/resources/pictures/jenkins_just_food.jpg)
 
+### Telegram report, screenshots
+![image](https://github.com/977605/just_food/blob/main/src/test/resources/pictures/telegram_report_just_food.jpg)
+
 ### Video of positive tests
 ![](https://github.com/977605/just_food/blob/main/src/test/resources/video/positive_test_just_food.gif)
 
