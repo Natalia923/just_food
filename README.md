@@ -54,10 +54,14 @@
     <img src="https://starchenkov.pro/qa-guru/img/skills/Jira.svg" width="40" height="40"  alt="Jira"/>
 </a>
 
-### Allure SE
+### Allure SE, screenshots
+![image](https://github.com/977605/just_food/blob/main/src/test/resources/pictures/allure_report_just_food.jpg)
 
 ### Allure report video
 ![](https://github.com/977605/just_food/blob/main/src/test/resources/video/gif%20for%20just%20food%20tests.gif)
+
+### Jenkins, screenshots
+![image](https://github.com/977605/just_food/blob/main/src/test/resources/pictures/jenkins_just_food.jpg)
 
 ### Video of positive tests
 ![](https://github.com/977605/just_food/blob/main/src/test/resources/video/positive_test_just_food.gif)
