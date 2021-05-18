@@ -55,3 +55,4 @@
 </a>
 
 ### Allure report
+![](https://github.com/977605/just_food/blob/main/src/test/resources/video/gif%20for%20just%20food%20tests.gif)
