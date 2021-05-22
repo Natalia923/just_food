@@ -9,10 +9,12 @@
 #### - Проверка преимуществ just food
 #### - Проверка формы заказа
 ####  - Проверка калькулятора калорий
+####  - UI. Galen. Проверка верстки
 
 ### Stack
-#### IntelliJ IDEA, Java, Gradle, Github, Jenkins, JUnit5, Allure SE, Allure TestOps,
-#### Selenide, Selenoid, Rest-Assured, Telegram, Jira.
+#### IntelliJ IDEA, Java, Gradle, Github, Jenkins, JUnit5, 
+#### Allure SE, Allure TestOps, Selenide, Selenoid, Galen framework
+#### Rest-Assured, Telegram, Jira, 
 
 <a href="https://www.jetbrains.com/idea/">
     <img src="https://starchenkov.pro/qa-guru/img/skills/Intelij_IDEA.svg" width="40" height="40"  alt="IDEA"/>
@@ -53,6 +55,9 @@
 <a href="https://www.jetbrains.com/idea/">
     <img src="https://starchenkov.pro/qa-guru/img/skills/Jira.svg" width="40" height="40"  alt="Jira"/>
 </a>
+<a href="https://www.jetbrains.com/idea/">
+    <img src="https://github.com/977605/just_food/blob/main/src/test/resources/pictures/galen_framework.jpg" width="40" height="40"  alt="Jira"/>
+</a>
 
 ### Allure SE, screenshots
 ![image](https://github.com/977605/just_food/blob/main/src/test/resources/pictures/allure_report_just_food.jpg)
@@ -65,6 +70,12 @@
 
 ### Telegram report, screenshots
 ![image](https://github.com/977605/just_food/blob/main/src/test/resources/pictures/telegram_report_just_food.jpg)
+
+### Galen framework, positive test, screenshots
+![image](https://github.com/977605/just_food/blob/main/src/test/resources/pictures/galen_positive_just_food.jpg)
+
+### Galen framework, negative test, screenshots
+![image](https://github.com/977605/just_food/blob/main/src/test/resources/pictures/galen_negative_just_food.jpg)
 
 ### Video of positive tests
 ![](https://github.com/977605/just_food/blob/main/src/test/resources/video/positive_test_just_food.gif)

@@ -7,15 +7,12 @@ repositories {
     mavenCentral()
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
-
-sourceCompatibility = '1.8'
-
 allure {
     autoconfigure = true
+    aspectjweaver = true
     version = '2.13.8'
+    resultsDir = file("${rootDir}/allure-results")
+    reportDir = file("${rootDir}/allure-report")
 
     useJUnit5 {
         version = '2.13.8'
@@ -23,25 +20,48 @@ allure {
 }
 
 dependencies {
+    implementation group: "io.qameta.allure", name: "allure-java-commons", version: "2.13.9"
+    implementation group: "io.qameta.allure", name: "allure-attachments", version: "2.13.9"
+    implementation group: "io.qameta.allure", name: "allure-junit5", version: "2.13.9"
+    implementation group: 'io.qameta.allure', name: 'allure-httpclient', version: "2.13.9"
+    implementation group: 'io.qameta.allure', name: 'allure-generator', version: "2.13.9"
+    implementation group: 'io.qameta.allure', name: 'allure-selenide', version: "2.13.9"
+    implementation group: 'io.qameta.allure', name: 'allure-rest-assured', version: "2.13.9"
+    implementation group: 'com.galenframework', name: 'galen-java-support', version: "2.4.4"
+    implementation group: 'org.assertj', name: 'assertj-core', version: "3.16.1"
+
+
     compile("com.codeborne:selenide:5.18.0")
-    compile("io.qameta.allure:allure-selenide:2.13.8")
     compile("com.github.javafaker:javafaker:1.0.2")
     compile("org.hamcrest:hamcrest-all:1.3")
+    compile("org.aspectj:aspectjweaver:1.9.6")
+    compile("io.rest-assured:rest-assured:4.3.1")
+    compile("org.junit.jupiter:junit-jupiter-api:5.7.1")
+    compile("org.junit.jupiter:junit-jupiter-engine:5.7.1")
+    compile("org.junit.jupiter:junit-jupiter-params:5.7.1")
 
-    compile("org.junit.jupiter:junit-jupiter-api:5.7.0")
-    compile("org.junit.jupiter:junit-jupiter-engine:5.7.0")
-    compile("org.junit.jupiter:junit-jupiter-params:5.7.0")
-}
-tasks.withType(Test) {
-    systemProperties += System.properties
-}
 
-test {
-    useJUnitPlatform()
-}
 
-task negative_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags 'negative'
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    test {
+        useJUnitPlatform()
+        systemProperties(System.getProperties())
+    }
+
+    tasks.withType(Test) {
+        maxParallelForks = 10
+        ignoreFailures = true
+        systemProperties += System.properties
+        System.setProperty("junit.jupiter.extensions.autodetection.enabled", "true")
+
+        useJUnitPlatform()
+        systemProperty 'allure.results.directory', "${rootDir}/allure-results"
+
+        jvmArgs += "-Dgalen.browser.screenshots.fullPage = true"
+        jvmArgs += "-Dgalen.browser.screenshots.fullPage.scrollWait = 500"
+        jvmArgs += "-Dgalen.browser.screenshots.fullPage.scrollTimeout = 500"
     }
 }
