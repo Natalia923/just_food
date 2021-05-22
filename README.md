@@ -56,7 +56,7 @@
     <img src="https://starchenkov.pro/qa-guru/img/skills/Jira.svg" width="40" height="40"  alt="Jira"/>
 </a>
 <a href="https://www.jetbrains.com/idea/">
-    <img src="https://github.com/977605/just_food/blob/main/src/test/resources/pictures/galen_framework.jpg" width="150" height="40"  alt="Jira"/>
+    <img src="https://github.com/977605/just_food/blob/main/src/test/resources/pictures/galen_framework.jpg" width="180" height="40"  alt="Jira"/>
 </a>
 
 ### Allure SE, screenshots
