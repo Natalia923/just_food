@@ -1,6 +1,6 @@
 package just_food;
 
-import io.qameta.allure.Description;
+import io.qameta.allure.*;
 import just_food.ui.LayoutSteps;
 import org.junit.jupiter.api.Test;
 
@@ -12,19 +12,19 @@ public class TestUi extends TestBase {
 
 
     @Test
-    @Description("Питание с научным подходом")
+    @Description("Доставка правильной еды на каждый день")
     public void negativeCheckJustFoodPageLayoutInChrome() throws IOException {
         testJustFoodPageCases.openPageJustFoodAndCheckTitle("https://www.justfood.pro/",
-                "Питание с научным подходом");
+                "Доставка правильной еды на каждый день");
         LayoutSteps.compareCurrentPageWithBase("galen-specs/tabs.spec", "chrome");
 
     }
 
     @Test
-    @Description("Питание с научным подходом")
+    @Description("Доставка правильной еды на каждый день")
     public void positiveCheckJustFoodPageLayoutInChrome() throws IOException {
         testJustFoodPageCases.openPageJustFoodAndCheckTitle("https://www.justfood.pro/",
-                "Питание с научным подходом");
+                "Доставка правильной еды на каждый день");
         LayoutSteps.compareCurrentPageWithBase("galen-specs/tabs1.spec", "chrome");
 
     }
