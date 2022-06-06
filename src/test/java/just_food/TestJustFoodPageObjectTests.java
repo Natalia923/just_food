@@ -1,18 +1,17 @@
 package just_food;
 
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class TestJustFoodPageObjectTests extends TestBase{
+public class TestJustFoodPageObjectTests extends TestBase {
 
     TestJustFoodPageCases testJustFoodPageCases = new TestJustFoodPageCases();
 
     @Test
     void positiveTestJustFood() {
-        Long age = getRandomLong(0,99);
+        Long age = getRandomLong(0, 99);
 
         testJustFoodPageCases.openPageJustFoodAndCheckTitle("https://www.justfood.pro/",
-                "Питание с научным подходом");
+                "Доставка правильной еды на каждый день");
         testJustFoodPageCases.checkMainBlocksOfJustFood();
         testJustFoodPageCases.checkWhyBlockOfJustFood();
         testJustFoodPageCases.checkFormForOrder();
@@ -21,12 +20,11 @@ public class TestJustFoodPageObjectTests extends TestBase{
 
     }
 
-    @Tag("negative")
     @Test
     void negativeTestJustFood() {
 
         testJustFoodPageCases.openPageJustFoodAndCheckTitle("https://www.justfood.pro/",
-                "Питание с научным подходом");
+                "Доставка правильной еды на каждый день");
         testJustFoodPageCases.openCalculatorForm();
         testJustFoodPageCases.checkNegativeСalorieСalculation();
     }
