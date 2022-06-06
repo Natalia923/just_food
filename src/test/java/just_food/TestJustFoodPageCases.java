@@ -12,23 +12,25 @@ import java.util.List;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static org.hamcrest.JMock1Matchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 
 public class TestJustFoodPageCases {
 
     @Step("Открываем страницу и проверяем,что на станице присутствует описание: " +
-            "Питание с научным подходом")
+            "Доставка правильной еды на каждый день")
     public void openPageJustFoodAndCheckTitle(String url, String title) {
         open(url);
-        $(By.xpath("//div[text()='Питание с научным подходом'] ")).shouldBe(visible);
-        $(By.xpath("//div[text()='Питание с научным подходом'] ")).shouldHave(text(title));
+        $(By.xpath("//h1[.='Доставка правильной еды на каждый день']")).shouldBe(visible);
+        $(By.xpath("//h1[.='Доставка правильной еды на каждый день']")).shouldHave(text(title));
     }
 
     @Step("Проверяем наличие на странице разделов: Почему мы?,Наша команда, СМИ о нас, FAQ, Описание программ")
     public void checkMainBlocksOfJustFood() {
         List<String> mainBlocksOfJustFood = new ArrayList<>();
-        mainBlocksOfJustFood.add($(By.xpath("//h2[.='Почему мы?'] ")).getText());
+        mainBlocksOfJustFood.add($(By.xpath("//h2[.='Почему мы?']")).getText());
         mainBlocksOfJustFood.add($(By.xpath("//h2[.='Наша команда']")).getText());
         mainBlocksOfJustFood.add($(By.xpath("//h2[.=' СМИ о нас ']")).getText());
         mainBlocksOfJustFood.add($(By.xpath("//*[@class='container']/app-faq/h2")).getText());
@@ -49,7 +51,7 @@ public class TestJustFoodPageCases {
         }
 
         Collection<String> whyBlockOfJustFoodExpected = Arrays.asList("Безопаснее похода в магазин", "Разнообразное меню",
-                "Много овощей и фруктов", "Минимум соли", "Без жарки на масле", "Бесконтактная доставка");
+                "Много овощей и фруктов", "Минимум соли", "Без жарки на масле", "Можно заменять блюда");
         whyBlockOfJustFoodExpected.retainAll(ls1);
     }
 
@@ -73,6 +75,9 @@ public class TestJustFoodPageCases {
 
     @Step("Проверка подсчета калорий в калькуляторе")
     public void checkСalorieСalculation(String age) {
+        $(".open-calc-btn").shouldBe(visible);
+        $(".open-calc-btn").scrollIntoView(false);
+        $(".open-calc-btn").click();
         $(By.xpath(" //*[@class='wrapper wrapper--gray']")).shouldHave(text("Рассчитать норму калорий"));
 
         $(By.xpath("//*[@class='radio-group gender']/label[2]")).click();
